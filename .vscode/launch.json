@@ -6,7 +6,7 @@
             "name": "hello:HelloWorldFunction (python3.10)",
             "invokeTarget": {
                 "target": "template",
-                "templatePath": "${workspaceFolder}/hello/template.yaml",
+                "templatePath": "${workspaceFolder}/template.yaml",
                 "logicalId": "HelloWorldFunction"
             },
             "lambda": {
@@ -21,11 +21,11 @@
             "name": "API hello:HelloWorldFunction (python3.10)",
             "invokeTarget": {
                 "target": "api",
-                "templatePath": "${workspaceFolder}/hello/template.yaml",
+                "templatePath": "${workspaceFolder}/template.yaml",
                 "logicalId": "HelloWorldFunction"
             },
             "api": {
-                "path": "/hello",
+                "path": "/",
                 "httpMethod": "get",
                 "payload": {
                     "json": {}
