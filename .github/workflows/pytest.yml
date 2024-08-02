@@ -24,7 +24,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - run: sam build --use-container --container-env-var AWS_SAM_STACK_NAME my_stack
+      - run: sam build --use-container --container-env-var Function1.AWS_SAM_STACK_NAME=my_stack
 
       - name: Install Dependencies
         run: |
