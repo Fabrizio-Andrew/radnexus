@@ -3,8 +3,9 @@ name: Pytest
 on: [push]
 
 jobs:
-  build-deploy:
+  Test:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
 
@@ -16,24 +17,12 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
 
-      - uses: aws-actions/setup-sam@v1
-
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
-      - run: sam build --use-container --container-env-var Function1.AWS_SAM_STACK_NAME=my_stack
-
-      - name: Install Dependencies
+      - name: Install Test Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r tests/requirements.txt
 
       # Run Unit Tests
       - name: Test with pytest
-        run: |
-          pip install pytest pytest-cov
-          python -m pytest --import-mode=append tests/unit/
+        run: python -m pytest --import-mode=append tests/unit/
 
