@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from hello_world import app
+from api.get_student_record import app
 
 
 @pytest.fixture()

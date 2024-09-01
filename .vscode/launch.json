@@ -3,7 +3,7 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
-            "name": "hello:HelloWorldFunction (python3.10)",
+            "name": "hello:get_student_record (python3.10)",
             "invokeTarget": {
                 "target": "template",
                 "templatePath": "${workspaceFolder}/template.yaml",
@@ -18,7 +18,7 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
-            "name": "API hello:HelloWorldFunction (python3.10)",
+            "name": "API:get_student_record (python3.10)",
             "invokeTarget": {
                 "target": "api",
                 "templatePath": "${workspaceFolder}/template.yaml",
